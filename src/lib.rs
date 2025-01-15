@@ -30,12 +30,12 @@ pub fn dotenv_option(input: TokenStream) -> TokenStream {
     if let Ok(dotenv_file_contents) = read_to_string(".env") {
         // Find the appropriate line, and split it on spaces
         if let Some(line) = dotenv_file_contents.lines().filter(|line| line.contains(&env_variable.value())).next() {
-            let mut line = line.split(" ");
+            let mut line = line.split("=");
             // Ignore the key and equal sign
             line.next();
-            line.next();
             // Get the value of the env variable
-            if let Some(value) = line.next() {
+            if let Some(mut value) = line.next() {
+                value = value.trim();
                 // Generate it into rust code
                 quote! {
                     Some(#value)
