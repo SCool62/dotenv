@@ -2,6 +2,11 @@
 name = "dotenv"
 version = "0.1.0"
 edition = "2024"
+description = "A simple proc-macro crate to use a .env file."
+readme = "README.md"
+repository = "https://github.com/SCool62/dotenv"
+license = "Apache-2.0"
+keywords = ["proc-macro", "dotenv"]
 
 [lib]
 proc-macro = true
