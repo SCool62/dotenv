@@ -1,6 +1,6 @@
 # Dotenv
 
-Small, proc-macro crate that bakes environment variables from a .env file into the compiled binary.
+Small, proc-macro crate that bakes environment variables from a .env file into the compiled binary. The `dotenv!()` macro is used the same as the built-in `env!()` macro, and the `dotenv_option!()` macro is used the same as `option_env!()`.
 
 ## Usage
 
